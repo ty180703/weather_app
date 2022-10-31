@@ -1,0 +1,100 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /*veiwport height think as 100% of the available height*/
+    margin: 0;
+    background: #123;
+    background-image: url("https://source.unsplash.com/random/1920x1080/?wallpaper,landscape");
+    font-size: 110%;
+}
+
+.card{
+    color: white;
+    background: #000000d0;
+    opacity: 0.75;
+    width: 100%; /*always want width 100 so fits all  screen sizes */
+    max-width: 420px;
+    border-radius: 30px;
+    font-family: 'PT Sans', sans-serif;
+    margin: 1em; /*size in relation to the font size*/
+    padding: 2em;
+    transition: 0.8s;
+}
+
+.card:hover input{
+    width: 300px;
+    cursor: pointer;
+}
+
+.card input{
+   
+   
+   max-width: 400px;
+   background: transparent;
+   border: none;
+   outline: none;
+   width: 0%; /*starting width for the bar*/
+   transition: 0.8s;
+   color: white;
+   padding: 0;
+   height: auto; 
+}
+
+button{
+    background: transparent;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    color: white;
+    padding: 0;
+    position: relative;
+    right: 8px;
+    cursor: pointer;
+}
+
+
+.flexbox{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 10px;
+}
+
+.weather.loading{
+    visibility: hidden;
+    position: relative;
+    max-height: 20px;
+    bottom: 40px;
+}
+.card.rain{
+    
+    box-shadow: #E5E4E2 0px 0px 0px 5px;
+    transition: 1.2s;
+}
+.card.clouds{
+    box-shadow: #247be5 0px 0px 0px 5px;
+    transition: 1.2s;
+}
+
+.card.clear{
+    box-shadow: #d13810 0px 0px 0px 5px;
+    transition: 1.2s;
+}
+
+.weather.error{
+    visibility: hidden;
+    position: relative;
+    max-height: 30px;
+   
+    
+}
+
+.weather.error:after{
+    visibility: visible;
+    content: "ERROR... PLEASE ENTER VALID CITY NAME";
+    color: white;
+
+    position: absolute;
+    top: 0;
+}
